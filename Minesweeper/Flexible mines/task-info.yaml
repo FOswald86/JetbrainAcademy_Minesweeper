@@ -94,7 +94,7 @@ files:
         }
     }
   learner_created: false
-- name: src/minesweeper/Field.java
+- name: src/minesweeper/BattleField.java
   visible: true
   text: |
     package minesweeper;
@@ -126,7 +126,7 @@ files:
         }
     }
   learner_created: true
-- name: src/minesweeper/Cell.java
+- name: src/minesweeper/Field.java
   visible: true
   text: |
     package minesweeper;
@@ -155,5 +155,5 @@ feedback_link: https://hyperskill.org/projects/77/stages/427/implement#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sat, 20 Nov 2021 16:10:49 UTC
-record: -1
+  time: Sat, 20 Nov 2021 16:15:39 UTC
+record: 2

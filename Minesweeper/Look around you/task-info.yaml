@@ -143,6 +143,88 @@ files:
         }
     }
   learner_created: false
+- name: src/minesweeper/BattleField.java
+  visible: true
+  text: |+
+    package minesweeper;
+
+    import java.util.Random;
+
+    public class BattleField {
+
+        private Field[][] field;
+
+        protected BattleField ( ) {
+            this.field = new Field[ 9 ][ 9 ];
+        }
+
+        protected void preSet ( int mineCount ) {
+            generateCells( );
+            placeMines( mineCount );
+        }
+
+        private void generateCells ( ) {
+            for ( int i = 0; i < this.field.length; i++ ) {
+                for ( int j = 0; j < this.field.length; j++ ) {
+                    this.field[ i ][ j ] = new Field( '.' );
+                }
+            }
+        }
+
+        private void placeMines ( int mineCount ) {
+            int c1, c2;
+            Random random = new Random( );
+            while ( mineCount > 0 ) {
+                c1 = random.nextInt( this.field.length - 1 );
+                c2 = random.nextInt( this.field.length - 1 );
+                if ( this.field[ c1 ][ c2 ].isEmpty( ) ) {
+                    this.field[ c1 ][ c2 ].placeMine( );
+                    mineCount--;
+                }
+            }
+        }
+
+        protected void print ( ) {
+            for ( Field[] row : this.field ) {
+                for ( Field field : row) {
+                    System.out.print( field.getField() );
+                }
+                System.out.println( );
+            }
+
+        }
+    }
+
+  learner_created: true
+- name: src/minesweeper/Field.java
+  visible: true
+  text: |
+    package minesweeper;
+
+    public class Field {
+        private char field;
+
+        public char getField ( ) {
+            return field;
+        }
+
+        public Field ( char cell ) {
+            this.field = cell;
+        }
+
+        protected boolean isEmpty ( ) {
+            return this.field == '.';
+        }
+
+        protected boolean isMine ( ) {
+            return this.field == 'X';
+        }
+
+        public void placeMine ( ) {
+            this.field = 'X';
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/77/stages/428/implement#comment
 status: Unchecked
 record: -1
