@@ -11,7 +11,7 @@ public class Cell {
         return this.cell;
     }
 
-    public void placeMine ( boolean b ) {
+    public void placeMine ( ) {
         this.cell = false;
     }
 }

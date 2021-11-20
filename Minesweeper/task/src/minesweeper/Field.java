@@ -22,7 +22,7 @@ public class Field {
             c1 = random.nextInt ( this.field.length - 1 );
             c2 = random.nextInt ( this.field.length - 1 );
             if ( this.field[ c1 ][ c2 ].isEmpty( ) ) {
-                this.field[ c1 ][ c2 ].placeMine( false );
+                this.field[ c1 ][ c2 ].placeMine( );
                 mineCount--;
             }
         }
