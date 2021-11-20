@@ -1,16 +1,14 @@
 package minesweeper;
 
 public class Cell {
-    private boolean cell;
-    private final char empty = '.';
-    private final char mine = 'X';
+    private final boolean cell;
 
     public char getEmpty ( ) {
-        return empty;
+        return '.';
     }
 
     public char getMine ( ) {
-        return mine;
+        return 'X';
     }
 
     public Cell ( boolean cell ) {

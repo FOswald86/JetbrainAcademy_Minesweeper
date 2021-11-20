@@ -2,12 +2,10 @@ package minesweeper;
 
 public class Field {
 
-    private Cell[][] field;
-    private final int rows = 9;
-    private final int columns = 9;
+    private final Cell[][] field;
 
     protected Field ( ) {
-        this.field = new Cell[ this.rows ][ this.columns ];
+        this.field = new Cell[ 9 ][ 9 ];
     }
 
     protected void preSet ( ) {
@@ -19,10 +17,10 @@ public class Field {
     }
 
     protected void print ( ) {
-        for ( int i = 0; i < this.field.length; i++ ) {
+        for ( Cell[] cells : this.field ) {
             for ( int j = 0; j < this.field.length; j++ ) {
-                System.out.print( this.field[ i ][ j ].isEmpty( ) ?
-                        this.field[ i ][ j ].getEmpty( ) : this.field[ i ][ j ].getMine( ) );
+                System.out.print( cells[ j ].isEmpty( ) ?
+                        cells[ j ].getEmpty( ) : cells[ j ].getMine( ) );
             }
             System.out.println( );
         }
