@@ -1,15 +1,7 @@
 package minesweeper;
 
 public class Cell {
-    private final boolean cell;
-
-    public char getEmpty ( ) {
-        return '.';
-    }
-
-    public char getMine ( ) {
-        return 'X';
-    }
+    private boolean cell;
 
     public Cell ( boolean cell ) {
         this.cell = cell;
@@ -17,5 +9,9 @@ public class Cell {
 
     protected boolean isEmpty ( ) {
         return this.cell;
+    }
+
+    public void placeMine ( boolean b ) {
+        this.cell = false;
     }
 }

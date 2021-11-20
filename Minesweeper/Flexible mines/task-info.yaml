@@ -94,6 +94,66 @@ files:
         }
     }
   learner_created: false
+- name: src/minesweeper/Field.java
+  visible: true
+  text: |
+    package minesweeper;
+
+    public class Field {
+
+        private final Cell[][] field;
+
+        protected Field ( ) {
+            this.field = new Cell[ 9 ][ 9 ];
+        }
+
+        protected void preSet ( ) {
+            for ( int i = 0; i < this.field.length; i++ ) {
+                for ( int j = 0; j < field.length; j++ ) {
+                    this.field[ i ][ j ] = new Cell( Math.random( ) > 0.1 );
+                }
+            }
+        }
+
+        protected void print ( ) {
+            for ( Cell[] cells : this.field ) {
+                for ( int j = 0; j < this.field.length; j++ ) {
+                    System.out.print( cells[ j ].isEmpty( ) ?
+                            cells[ j ].getEmpty( ) : cells[ j ].getMine( ) );
+                }
+                System.out.println( );
+            }
+        }
+    }
+  learner_created: true
+- name: src/minesweeper/Cell.java
+  visible: true
+  text: |
+    package minesweeper;
+
+    public class Cell {
+        private final boolean cell;
+
+        public char getEmpty ( ) {
+            return '.';
+        }
+
+        public char getMine ( ) {
+            return 'X';
+        }
+
+        public Cell ( boolean cell ) {
+            this.cell = cell;
+        }
+
+        protected boolean isEmpty ( ) {
+            return this.cell;
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/77/stages/427/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 20 Nov 2021 16:02:46 UTC
 record: -1
