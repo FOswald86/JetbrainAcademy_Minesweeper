@@ -12,15 +12,35 @@ public class Field {
         return this.field == 'X';
     }
 
-    protected void placeMine ( ) {
+    protected boolean isNumber ( ) {
+        return Character.isDigit( this.field );
+    }
+
+    public boolean isMark ( ) {
+        return this.field == '*';
+    }
+
+    protected void setMine ( ) {
         this.field = 'X';
     }
 
-    protected char getField ( ) {
-        return field;
+    public void setEmpty ( ) {
+        this.field = '.';
     }
 
-    protected Field ( char cell ) {
-        this.field = cell;
+    public void setMark ( ) {
+        this.field = '*';
+    }
+
+    protected void setCounter ( int counter ) {
+        this.field = ( char ) ( counter + 48 );
+    }
+
+    protected char getField ( ) {
+        return this.field;
+    }
+
+    protected Field ( char field ) {
+        this.field = field;
     }
 }
