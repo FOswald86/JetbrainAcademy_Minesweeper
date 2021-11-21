@@ -16,6 +16,10 @@ public class Field {
         this.field = 'X';
     }
 
+    protected void placeCounter ( int counter ) {
+        this.field = (char) (counter + 48);
+    }
+
     protected char getField ( ) {
         return field;
     }

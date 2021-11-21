@@ -1,6 +1,5 @@
 package minesweeper;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class BattleField {
@@ -39,28 +38,22 @@ public class BattleField {
     }
 
     protected void hints ( ) {
-        int counter = 0;
         for ( int i = 0; i < this.field.length; i++ ) {
             for ( int j = 0; j < this.field.length; j++ ) {
-                if ( i == 0 ) {
-
-                } else if ( i == 0 && j == 0) {
-
-                } else if ( i == 0 ) {
-
-                } else if ( i == 0 && j == this.field.length - 1 ) {
-
-                } else if ( ! ( field[ i ][ j ].isEmpty( ) ) ) {
-
-                } else if ( ! ( field[ i ][ j ].isEmpty( ) ) ) {
-
-                } else if ( ! ( field[ i ][ j ].isEmpty( ) ) ) {
-
-                } else if ( ! ( field[ i ][ j ].isEmpty( ) ) ) {
-
-                } else if ( ! ( field[ i ][ j ].isEmpty( ) ) ) {
-
-                }
+                int counter = 0;
+                // row above
+                if ( i - 1 >= 0 && j - 1 >= 0 ) if ( this.field[ i - 1 ][ j - 1 ].isMine( ) ) counter++;
+                if ( i - 1 >= 0 ) if ( this.field[ i - 1 ][ j ].isMine( ) ) counter++;
+                if ( i - 1 >= 0 && j + 1 < this.field.length ) if ( this.field[ i - 1 ][ j + 1 ].isMine( ) ) counter++;
+                // middle row
+                if ( j - 1 >= 0 ) if ( this.field[ i ][ j - 1 ].isMine( ) ) counter++;
+                if ( j + 1 < this.field.length ) if ( this.field[ i ][ j + 1 ].isMine( ) ) counter++;
+                // bottom row
+                if ( i + 1 < this.field.length && j - 1 >= 0 ) if ( this.field[ i + 1 ][ j - 1 ].isMine( ) ) counter++;
+                if ( i + 1 < this.field.length ) if ( this.field[ i + 1 ][ j ].isMine( ) ) counter++;
+                if ( i + 1 < this.field.length && j + 1 < this.field.length ) if ( this.field[ i + 1 ][ j + 1 ].isMine( ) ) counter++;
+                // set counter
+                if ( counter > 0 && this.field[ i ][ j ].isEmpty( ) ) this.field[ i ][ j ].placeCounter( counter );
             }
         }
     }
@@ -72,6 +65,7 @@ public class BattleField {
             }
             System.out.println( );
         }
+
     }
 }
 
