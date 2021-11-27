@@ -31,3 +31,7 @@ same field twice unmarks the field again
 <img src="https://github.com/FOswald86/JetbrainAcademy_Minesweeper/blob/master/minesweeper.gif" width="800" height="500" />  
 
 https://hyperskill.org/projects/77   
+  
+  
+  
+Had some Problems to commit last Stage something in the Gradle-course broke.
